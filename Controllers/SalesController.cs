@@ -15,6 +15,7 @@ public class SalesController : Controller
     }
 
     static List<Customer> cust = new List<Customer>(); //if not static old data lose but static method true running application
+    static int i = 0;
 
     public IActionResult DataList()
     {
@@ -31,7 +32,7 @@ public class SalesController : Controller
     [HttpPost]
     public IActionResult Submit(string name, int income){
         cust.Add(new Customer(){
-            Id = 1,
+            Id = i++,
             Name = name,
             Income = income
         });
