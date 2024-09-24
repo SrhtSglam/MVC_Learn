@@ -14,10 +14,14 @@ public class SalesController : Controller
     }
     public IActionResult DataList()
     {
-        List<string> lst = new List<string>();
+        List<Customer> cust = new List<Customer>();
         for (int i =0; i < 10; i++){
-            lst.Add("SERhat" + i);
+            cust.Add(new Customer(){
+                Id = i,
+                Name = "Serhat" + i,
+                Income = i*125
+            });
         }
-        return View("DataList", lst);
+        return View("DataList", cust);
     }
 }

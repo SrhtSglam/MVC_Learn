@@ -1,7 +1,13 @@
-@model List<string>
+@model List<Customer>
 @{
     ViewData["Title"] = "Data List";
 }
+
+<style>
+table, th, td {
+    border: 1px solid black;
+}
+</style>
 
 <div class="text-center">
     <h1 class="display-4">Welcome @ViewData["Title"]</h1>
@@ -9,18 +15,27 @@
 </div>
 
 <div>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Income</th>
-        </tr>
-        @for (int i = 0; i < 10; i++){
+    <div style="float: left;">
+        <table>
             <tr>
-                <td>@i.ToString()</td>
-                <td>@Model[i]</td>
-                <td></td>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Income</th>
             </tr>
-        }
-    </table>
+            @for (int i = 0; i < @Model.Count; i++){
+                <tr>
+                    <td>@Model[i].Id</td>
+                    <td>@Model[i].Name</td>
+                    <td>@Model[i].Income</td>
+                </tr>
+            } 
+        </table>
+    </div>
+
+    @* <div style="margin-left: 200px;">
+        <input type="text" placeholder="Name">
+        <input type="number" placeholder="Income">
+
+        <Button>Send</Button>
+    </div> *@
 </div>
