@@ -14,8 +14,10 @@ public class SalesController : Controller
     }
     public IActionResult DataList()
     {
-        string name = "Serhat";
-        
-        return View("DataList", name);
+        List<string> lst = new List<string>();
+        for (int i =0; i < 10; i++){
+            lst.Add("SERhat" + i);
+        }
+        return View("DataList", lst);
     }
 }
