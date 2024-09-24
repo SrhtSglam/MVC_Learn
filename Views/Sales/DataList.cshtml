@@ -22,20 +22,31 @@ table, th, td {
                 <th>Name</th>
                 <th>Income</th>
             </tr>
-            @for (int i = 0; i < @Model.Count; i++){
+            @foreach (var customer in Model)
+            {
                 <tr>
-                    <td>@Model[i].Id</td>
-                    <td>@Model[i].Name</td>
-                    <td>@Model[i].Income</td>
+                    <td>@customer.Id</td>
+                    <td>@customer.Name</td>
+                    <td>@customer.Income</td>
                 </tr>
-            } 
+            }
         </table>
     </div>
 
     <div style="margin-left: 200px;">
-        <input type="text" placeholder="Name" id="name">
-        <input type="number" placeholder="Income" id="income">
 
-        <Button type="submit">Send</Button>
+        @using (Html.BeginForm("Submit", "Sales", FormMethod.Post))
+        {
+            <input type="text" placeholder="Name" name="name" required />
+            <input type="number" placeholder="Income" name="income" required />
+            <button type="submit">Send</button>
+        }   
+    
     </div>
 </div>
+
+@section scripts{
+    <script>
+        alert('@ViewBag.Message');
+    </script>   
+}
