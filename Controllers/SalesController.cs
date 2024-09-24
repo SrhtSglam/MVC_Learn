@@ -15,13 +15,13 @@ public class SalesController : Controller
     public IActionResult DataList()
     {
         List<Customer> cust = new List<Customer>();
-        for (int i =0; i < 10; i++){
-            cust.Add(new Customer(){
-                Id = i,
-                Name = "Serhat" + i,
-                Income = i*125
-            });
-        }
+        // for (int i =0; i < 10; i++){
+        //     cust.Add(new Customer(){
+        //         Id = i,
+        //         Name = "Serhat" + i,
+        //         Income = i*125
+        //     });
+        // }
         return View("DataList", cust);
     }
 }
