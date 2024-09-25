@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "vWWSvYxbmN1a/maoS0Zpm0sh47UNtrrCPrzTO4WaKSK8vI13Z98NIlyMLk1fm8bs/uK+6zta/XeKUvXlBeZ2Mg==",
+  "dgSpecHash": "fBSDTBP31hE=",
   "success": true,
-  "projectFilePath": "C:\\Users\\serha\\Documents\\GitHub\\MVC_Learn\\MVC_Learn.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\serhat.saglam\\Documents\\GitHub\\MVC_Learn\\MVC_Learn.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\serhat.saglam\\.nuget\\packages\\newtonsoft.json\\13.0.3\\newtonsoft.json.13.0.3.nupkg.sha512"
+  ],
   "logs": []
 }

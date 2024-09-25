@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using MVC_Learn.Models;
+using Newtonsoft.Json;
 
 namespace MVC_Learn.Controllers;
 
@@ -14,7 +15,7 @@ public class SalesController : Controller
         return View();
     }
 
-    static List<Customer> cust = new List<Customer>(); //if not static old data lose but static method true running application
+    public static List<Customer> cust = new List<Customer>(); //if not static old data lose but static method true running application
     static int i = 0;
 
     public IActionResult DataList()
@@ -29,6 +30,8 @@ public class SalesController : Controller
         return View("DataList", cust);
     }
 
+    FileSystem fs = new FileSystem();
+
     [HttpPost]
     public IActionResult Submit(string name, int income){
         cust.Add(new Customer(){
@@ -36,7 +39,8 @@ public class SalesController : Controller
             Name = name,
             Income = income
         });
-        ViewBag.Message = "MSG:" + cust.Count;
+        // ViewBag.Message = "MSG:" + cust.Count;
+        fs.fileWrite(cust);
         return View("DataList", cust);
     }
 }

@@ -60,3 +60,8 @@ C:\Users\serha\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\refint\MVC_Learn.dll
 C:\Users\serha\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\MVC_Learn.pdb
 C:\Users\serha\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\MVC_Learn.genruntimeconfig.cache
 C:\Users\serha\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\ref\MVC_Learn.dll
+C:\Users\serhat.saglam\Documents\GitHub\MVC_Learn\bin\Debug\net8.0\json\dtbUsers.json
+C:\Users\serhat.saglam\Documents\GitHub\MVC_Learn\bin\Debug\net8.0\Newtonsoft.Json.dll
+C:\Users\serhat.saglam\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\MVC_Learn.csproj.AssemblyReference.cache
+C:\Users\serhat.saglam\Documents\GitHub\MVC_Learn\obj\Debug\net8.0\MVC_Learn.csproj.Up2Date
+C:\Users\serhat.saglam\Documents\GitHub\MVC_Learn\bin\Debug\net8.0\dtbUsers.Json
