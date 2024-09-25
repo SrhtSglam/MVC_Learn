@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.Extensions.FileSystemGlobbing;
 using MVC_Learn.Models;
 using Newtonsoft.Json;
 
@@ -33,7 +34,7 @@ public class SalesController : Controller
     FileSystem fs = new FileSystem();
 
     [HttpPost]
-    public IActionResult DataList(string name, int income){
+    public IActionResult DataListPost(string name, int income){
         cust.Add(new Customer(){
             Id = i++,
             Name = name,
@@ -41,6 +42,13 @@ public class SalesController : Controller
         });
         // ViewBag.Message = "MSG:" + cust.Count;
         fs.fileWrite(cust);
+        return View("DataList", cust);
+    }
+
+    [HttpGet]
+    public IActionResult DataListGet(string name, int income){
+        // ViewBag.Message = "MSG:" + cust.Count;
+        cust = fs.fileRead(cust);
         return View("DataList", cust);
     }
 
