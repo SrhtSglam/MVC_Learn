@@ -12,10 +12,18 @@ public class FileSystem(){
         File.WriteAllText(filePath, json);
     }
 
-    public List<Customer> fileRead(List<Customer> lst){
+    public List<Customer> fileRead02(List<Customer> lst){
         string filePath = "json/dtbUsers.json";
         string json = File.ReadAllText(filePath);
         lst = JsonConvert.DeserializeObject<List<Customer>>(json)!;
+        return lst;
+    }
+
+    public List<Customer> fileRead(){
+        string filePath = "json/dtbUsers.json";
+        string json = File.ReadAllText(filePath);
+        List<Customer> lst = JsonConvert.DeserializeObject<List<Customer>>(json)!;
+        
         return lst;
     }
 }

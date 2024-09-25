@@ -1,7 +1,7 @@
 @model List<Customer>
 
 @{
-    ViewData["Title"] = "Data List";
+    ViewData["Title"] = "Get List";
 }
 
 <style>
@@ -13,9 +13,6 @@ table, th, td {
 <div class="text-center">
     <h1 class="display-4">Welcome @ViewData["Title"]</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
- <p>
-Toplam Veri : @Model.Count();
-</p>
 </div>
 
 <div style="margin-left: 27%;">
@@ -38,23 +35,6 @@ Toplam Veri : @Model.Count();
     </div>
 
     <div style="margin-left: 200px;">
-
-        @* @using (Html.BeginForm("Submit", "Sales", FormMethod.Post))
-        {
-            <input type="text" placeholder="Name" name="name" required />
-            <input type="number" placeholder="Income" name="income" required />
-            <input type="submit" value="Send"></input>
-        }    *@
-
-        <form action="DataListPost" method="post">
-            <input type="text" placeholder="Name" name="name" required />
-            <input type="number" placeholder="Income" name="income" required />
-            <input type="submit" value="Send"></input>
-        </form>
-
-        <form action="GetList" method="get">
-            <input type="submit" value="Get" />
-        </form>
 
     </div>
 </div>

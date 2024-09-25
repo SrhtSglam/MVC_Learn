@@ -11,12 +11,21 @@ public class SalesController : Controller
 {
 
 
+    //public static List<Customer> customerList; = new List<Customer>(); //if not static old data lose but static method true running application
+    public List<Customer> customerList;
+    FileSystem fs = new FileSystem();
+    public SalesController()
+    {
+       if (customerList == null) {
+            customerList = new List<Customer>();
+        } 
+    }
+
     public IActionResult Index()
     {
         return View();
     }
 
-    public static List<Customer> cust = new List<Customer>(); //if not static old data lose but static method true running application
     static int i = 0;
 
     public IActionResult DataList()
@@ -28,29 +37,57 @@ public class SalesController : Controller
         //         Income = i*125
         //     });
         // }
-        return View("DataList", cust);
+
+        if (customerList == null) {
+            customerList = new List<Customer>();
+        } 
+
+        return View("DataList", customerList);
     }
 
-    FileSystem fs = new FileSystem();
+
 
     [HttpPost]
     public IActionResult DataListPost(string name, int income){
-        cust.Add(new Customer(){
+        
+        
+        // ViewBag.Message = "MSG:" + cust.Count;
+        customerList = fs.fileRead();
+        customerList.Add(new Customer(){
             Id = i++,
             Name = name,
             Income = income
         });
-        // ViewBag.Message = "MSG:" + cust.Count;
-        fs.fileWrite(cust);
-        return View("DataList", cust);
+
+        fs.fileWrite(customerList);
+        
+        customerList = fs.fileRead();
+        return View("DataList", customerList);
     }
 
     [HttpGet]
-    public IActionResult DataListGet(string name, int income){
-        // ViewBag.Message = "MSG:" + cust.Count;
-        cust = fs.fileRead(cust);
-        return View("DataList", cust);
+    public IActionResult GetList(){
+        //fs.fileRead(cust);
+
+        /*if (customerList == null) {
+            customerList = new List<Customer>();
+        } */
+
+        customerList =  fs.fileRead();
+        return View("DataList", customerList);
+
     }
+
+    
+    [HttpGet]
+    public IActionResult GetList2(string name, int income){
+        // ViewBag.Message = "MSG:" + cust.Count;
+        //cust = fs.fileRead(cust);
+        customerList = fs.fileRead();
+        
+        return View("DataList", customerList);
+    }
+
 
     
 }
