@@ -35,13 +35,19 @@ table, th, td {
 
     <div style="margin-left: 200px;">
 
-        @using (Html.BeginForm("Submit", "Sales", FormMethod.Post))
+        @* @using (Html.BeginForm("Submit", "Sales", FormMethod.Post))
         {
             <input type="text" placeholder="Name" name="name" required />
             <input type="number" placeholder="Income" name="income" required />
-            <button type="submit">Send</button>
-        }   
-    
+            <input type="submit" value="Send"></input>
+        }    *@
+
+        <form action="DataList" method="post">
+            <input type="text" placeholder="Name" name="name" required />
+            <input type="number" placeholder="Income" name="income" required />
+            <input type="submit" value="Send"></input>
+        </form>
+
     </div>
 </div>
 @* 

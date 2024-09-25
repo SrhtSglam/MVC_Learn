@@ -33,7 +33,7 @@ public class SalesController : Controller
     FileSystem fs = new FileSystem();
 
     [HttpPost]
-    public IActionResult Submit(string name, int income){
+    public IActionResult DataList(string name, int income){
         cust.Add(new Customer(){
             Id = i++,
             Name = name,
@@ -43,4 +43,6 @@ public class SalesController : Controller
         fs.fileWrite(cust);
         return View("DataList", cust);
     }
+
+    
 }
